@@ -8,6 +8,12 @@
         "description": "Name of the storage account"
       }
     },
+    "location": {
+      "type": "string",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    }
   },
   "variables": {},
   "resources": [
@@ -15,7 +21,7 @@
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2018-02-01",
       "name": "servicePlan",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "sku": {
         "name": "Y1",
         "tier": "Dynamic"
@@ -32,7 +38,7 @@
       "apiVersion": "2015-08-01",
       "type": "Microsoft.Web/sites",
       "name": "functionApp",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "kind": "functionapp",
       "dependsOn": [
         "[resourceId('Microsoft.Web/serverfarms', 'servicePlan')]",
