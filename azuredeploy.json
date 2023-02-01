@@ -87,7 +87,7 @@
             },
             {
               "name": "FUNCTIONS_WORKER_RUNTIME",
-              "value": "[parameters('runTime')]"
+              "value": "[parameters('runtime')]"
             }
           ],
           "ftpsState": "FtpsOnly",
