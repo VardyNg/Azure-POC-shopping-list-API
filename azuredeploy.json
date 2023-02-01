@@ -111,7 +111,6 @@
         "httpsOnly": true
       },
       "dependsOn": [
-
         "[resourceId('Microsoft.Web/serverfarms', parameters('appName'))]"
       ]
     },
