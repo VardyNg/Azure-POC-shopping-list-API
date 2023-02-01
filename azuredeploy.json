@@ -4,6 +4,7 @@
   "parameters": {
     "storageAccount_name": {
       "type": "string",
+      "defaultValue": "pocshoppinglistsa",
       "metadata": {
         "description": "Name of the storage account"
       }
