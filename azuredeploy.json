@@ -33,20 +33,14 @@
   "resources": [
     {
       "type": "Microsoft.Web/serverfarms",
-      "apiVersion": "2018-02-01",
-      "name": "servicePlan",
+      "apiVersion": "2021-03-01",
+      "name": "[parameters('appName')]",
       "location": "[resourceGroup().location]",
       "sku": {
-        "name": "Y1",
+        "name": "Y1",g
         "tier": "Dynamic"
       },
-      "properties": {
-        "name": "servicePlan",
-        "computeMode": "Dynamic"
-      },
-      "tags": {
-        "displayName": "servicePlan"
-      }
+      "properties": {}
     },
     {
       "type": "Microsoft.Web/sites",
