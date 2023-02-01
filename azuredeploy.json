@@ -43,13 +43,7 @@
     "organizationName": {
       "type": "string"
     },
-    "virtualNetworkType": {
-      "type": "string"
-    },
     "tagsByResource": {
-      "type": "object"
-    },
-    "vnet": {
       "type": "object"
     },
     "customProperties": {
@@ -57,21 +51,6 @@
     },
     "identity": {
       "type": "object"
-    },
-    "appInsightsObject": {
-      "type": "object"
-    },
-    "publicIpAddressId": {
-      "type": "string"
-    },
-    "privateEndpoint": {
-      "type": "object"
-    },
-    "privateDnsDeploymentName": {
-      "type": "string"
-    },
-    "subnetDeploymentName": {
-      "type": "string"
     }
   },
   "variables": {},
