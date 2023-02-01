@@ -36,8 +36,7 @@
       "location": "[resourceGroup().location]",
       "kind": "functionapp",
       "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', 'servicePlan')]",
-        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccount_name'))]"
+        "[resourceId('Microsoft.Web/serverfarms', 'servicePlan')]"
       ],
       "properties": {
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'servicePlan')]",
