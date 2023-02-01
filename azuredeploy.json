@@ -27,6 +27,51 @@
       "metadata": {
         "description": "The language worker runtime to load in the function app."
       }
+    },
+    "apimName": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "string"
+    },
+    "adminEmail": {
+      "type": "string"
+    },
+    "organizationName": {
+      "type": "string"
+    },
+    "virtualNetworkType": {
+      "type": "string"
+    },
+    "tagsByResource": {
+      "type": "object"
+    },
+    "vnet": {
+      "type": "object"
+    },
+    "customProperties": {
+      "type": "object"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "appInsightsObject": {
+      "type": "object"
+    },
+    "publicIpAddressId": {
+      "type": "string"
+    },
+    "privateEndpoint": {
+      "type": "object"
+    },
+    "privateDnsDeploymentName": {
+      "type": "string"
+    },
+    "subnetDeploymentName": {
+      "type": "string"
     }
   },
   "variables": {},
@@ -42,6 +87,7 @@
       },
       "properties": {}
     },
+    // Function App
     {
       "type": "Microsoft.Web/sites",
       "apiVersion": "2021-03-01",
@@ -86,8 +132,29 @@
         "httpsOnly": true
       },
       "dependsOn": [
+
         "[resourceId('Microsoft.Web/serverfarms', parameters('appName'))]"
       ]
+    },
+    // API Management Gateway
+    {
+      "type": "Microsoft.ApiManagement/service",
+      "apiVersion": "2021-01-01-preview",
+      "name": "[parameters('apimName')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "[parameters('tier')]",
+        "capacity": "[parameters('capacity')]"
+      },
+      "identity": "[parameters('identity')]",
+      "tags": "[parameters('tagsByResource')]",
+      "properties": {
+          "publisherEmail": "[parameters('adminEmail')]",
+          "publisherName": "[parameters('organizationName')]",
+          "customProperties": "[parameters('customProperties')]"
+      },
+      "resources": [],
+      "dependsOn": []
     }
   ],
   "outputs": {}
