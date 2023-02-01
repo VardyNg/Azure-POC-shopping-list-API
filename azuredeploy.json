@@ -37,7 +37,7 @@
       "name": "[parameters('appName')]",
       "location": "[resourceGroup().location]",
       "sku": {
-        "name": "Y1",g
+        "name": "Y1",
         "tier": "Dynamic"
       },
       "properties": {}
